@@ -1,4 +1,4 @@
-i.icon {
+i#icon {
     font-size: 2em;
 }
 
@@ -8,4 +8,15 @@ i.icon {
 
 #delete {
     display: inline;
+}
+
+.description {
+    text-align: justify;
+}
+
+#date {
+    color: grey;
+    display: inline;
+    font-size: 20px;
+    padding-right: 150px;
 }

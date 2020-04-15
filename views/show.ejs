@@ -3,13 +3,12 @@
 <div class="ui main text container segment">
     <div class="ui huge header">
         <%= blog.title %>
+        <span id="date"><em>(posted: <%= blog.created.toDateString() %>)</em></span>
     </div>
     <div class="ui top attached">
         <div class="item">
             <img class="ui centered rounded image" src="<%= blog.image %>" alt="" />
-            <div class="meta">
-                <span class="date"><%= blog.created.toDateString() %></span>
-            </div>
+            <br>
             <div class="description">
                 <p><%- blog.body %></p>
             </div>
