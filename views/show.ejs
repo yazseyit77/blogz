@@ -6,16 +6,19 @@
     </div>
     <div class="ui top attached">
         <div class="item">
-            <img class="ui centered rounded image" src="<%= blog.image %>" alt="">
+            <img class="ui centered rounded image" src="<%= blog.image %>" alt="" />
             <div class="meta">
                 <span class="date"><%= blog.created.toDateString() %></span>
             </div>
             <div class="description">
                 <p><%- blog.body %></p>
             </div>
+            <a style="color: grey" class="ui grey inverted button" href="/blogs/<%= blog._id %></a>/edit">Edit</a>
+            <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                <button class="ui red inverted button">Remove</button>
+            </form>
         </div>
     </div>
 </div>
-
 
 <%- include("partials/footer") -%>

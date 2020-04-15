@@ -8,7 +8,7 @@ let app = express();
 mongoose.connect("mongodb://localhost:27017/blogz", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: true,
+  useFindAndModify: false,
 });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -84,5 +84,15 @@ app.put("/blogs/:id", (req, res) => {
   });
 });
 // delete route
+app.delete("/blogs/:id", (req, res) => {
+  Blog.findByIdAndRemove(req.params.id, (err) => {
+    if (err) {
+      res.redirect("/blogs");
+    } else {
+      res.redirect("/blogs/");
+    }
+  });
+});
 
+// PORT to listen
 app.listen(8000, console.log("Listening on PORT: 8000"));
